@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".Fragments.Statistics">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_margin="8dp"
+		android:orientation="vertical">
+
+
+		<com.google.android.material.card.MaterialCardView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="16dp"
+			android:layout_marginRight="16dp"
+			android:layout_marginBottom="4dp"
+			android:backgroundTint="@color/colorPrimaryDark"
+			android:elevation="4dp"
+			app:cardCornerRadius="12dp">
+
+			<TextView
+				android:id="@+id/table"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:padding="2dp"
+				android:text="League Table"
+				android:textColor="@color/text"
+				android:textSize="20sp"
+				android:textStyle="bold" />
+		</com.google.android.material.card.MaterialCardView>
+
+		<com.google.android.material.card.MaterialCardView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:backgroundTint="@color/colorAccent"
+			android:elevation="8dp"
+			app:cardCornerRadius="6dp"
+			app:strokeColor="@color/text"
+			app:strokeWidth="1.5dp">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:weightSum="7">
+
+				<TextView
+					android:id="@+id/position"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight=".5"
+					android:padding="3dp"
+					android:text="Ps"
+					android:textColor="@color/text"
+					android:textSize="15sp"
+					android:textStyle="bold" />
+
+				<TextView
+					android:id="@+id/team_name"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="2.5"
+					android:gravity="center"
+					android:padding="3dp"
+					android:text="Team"
+					android:textColor="@color/text"
+					android:textSize="15sp"
+					android:textStyle="bold" />
+
+				<TextView
+					android:id="@+id/matches_played"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:padding="3dp"
+					android:text="MP"
+					android:textColor="@color/text"
+					android:textSize="15sp"
+					android:textStyle="bold"/>
+
+				<TextView
+					android:id="@+id/goalDiff"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:padding="3dp"
+					android:text="GD"
+					android:textColor="@color/text"
+					android:textSize="15sp"
+					android:textStyle="bold"/>
+
+
+				<TextView
+					android:id="@+id/points"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:padding="3dp"
+					android:text="Pts"
+					android:textColor="@color/text"
+					android:textSize="15sp"
+					android:textStyle="bold"/>
+
+				<TextView
+					android:id="@+id/form"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:padding="3dp"
+					android:text="Form"
+					android:textColor="@color/text"
+					android:textSize="15sp"
+					android:textStyle="bold"/>
+			</LinearLayout>
+		</com.google.android.material.card.MaterialCardView>
+
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/standingList"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="2dp">
+
+
+		</androidx.recyclerview.widget.RecyclerView>
+	</LinearLayout>
+</FrameLayout>
