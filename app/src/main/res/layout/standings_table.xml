@@ -20,7 +20,7 @@
 			android:gravity="center"
 			android:padding="3dp"
 			android:text="Ps"
-			android:textColor="@color/textSecondery"
+			android:textColor="@color/textOptional"
 			android:textSize="15sp"
 			android:textStyle="bold" />
 
@@ -32,7 +32,7 @@
 			android:gravity="center"
 			android:padding="3dp"
 			android:text="Team"
-			android:textColor="@color/textSecondery"
+			android:textColor="@color/textOptional"
 			android:textSize="15sp"
 			android:textStyle="bold"
 
@@ -46,7 +46,7 @@
 			android:gravity="center"
 			android:padding="3dp"
 			android:text="MP"
-			android:textColor="@color/textSecondery"
+			android:textColor="@color/textOptional"
 			android:textSize="15sp"
 			android:textStyle="bold" />
 
@@ -58,7 +58,7 @@
 			android:gravity="center"
 			android:padding="3dp"
 			android:text="GD"
-			android:textColor="@color/textSecondery"
+			android:textColor="@color/textOptional"
 			android:textSize="15sp"
 			android:textStyle="bold" />
 
@@ -71,7 +71,7 @@
 			android:gravity="center"
 			android:padding="3dp"
 			android:text="Pts"
-			android:textColor="@color/textSecondery"
+			android:textColor="@color/textOptional"
 			android:textSize="15sp"
 			android:textStyle="bold" />
 
@@ -83,7 +83,7 @@
 			android:gravity="center"
 			android:padding="3dp"
 			android:text="Form"
-			android:textColor="@color/textSecondery"
+			android:textColor="@color/textOptional"
 			android:textSize="12sp"
 			android:textStyle="bold" />
 	</LinearLayout>

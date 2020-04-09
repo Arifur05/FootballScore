@@ -1,5 +1,6 @@
 package com.arifur.footballscore.ViewModels;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +34,7 @@ public class ScoreChildAdapter extends  RecyclerView.Adapter<ScoreChildAdapter.S
         return new ScoreChildViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ScoreChildViewHolder holder, int position) {
         Match match= matchList.get(position);

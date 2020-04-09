@@ -1,5 +1,5 @@
 
-package com.arifur.footballscore.StatModels;
+package com.arifur.footballscore.Model.StatModels;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

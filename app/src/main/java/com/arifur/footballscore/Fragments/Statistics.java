@@ -1,6 +1,5 @@
 package com.arifur.footballscore.Fragments;
 
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -15,12 +14,9 @@ import android.widget.Toast;
 
 import com.arifur.footballscore.Api.Statistics_Api;
 import com.arifur.footballscore.R;
-import com.arifur.footballscore.StatModels.Api;
-import com.arifur.footballscore.StatModels.LeagueStatisticsModel;
-import com.arifur.footballscore.StatModels.Standing;
+import com.arifur.footballscore.Model.StatModels.Api;
+import com.arifur.footballscore.Model.StatModels.LeagueStatisticsModel;
 import com.arifur.footballscore.ViewModels.StatisticsAdapter;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;

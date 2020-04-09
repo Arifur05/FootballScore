@@ -11,10 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.arifur.footballscore.R;
-import com.arifur.footballscore.StatModels.Standing;
+import com.arifur.footballscore.Model.StatModels.Standing;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 
