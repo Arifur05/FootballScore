@@ -8,4 +8,7 @@
 		<item name="colorAccent">@color/colorAccent</item>
 	</style>
 
+	<style name="baseFont" parent="AppTheme">
+		<item name="android:fontFamily">sans-serif-black</item>
+	</style>
 </resources>

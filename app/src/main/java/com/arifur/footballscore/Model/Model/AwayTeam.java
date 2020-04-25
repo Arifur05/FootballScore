@@ -1,5 +1,4 @@
-
-package com.arifur.footballscore.Model.Fixtures;
+package com.arifur.footballscore.Model.Model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -21,7 +20,7 @@ public class AwayTeam {
     }
 
     public void setTeamId(Integer teamId) {
-        this.teamId = teamId;
+        this.teamId=teamId;
     }
 
     public String getTeamName() {
@@ -29,7 +28,7 @@ public class AwayTeam {
     }
 
     public void setTeamName(String teamName) {
-        this.teamName = teamName;
+        this.teamName=teamName;
     }
 
     public String getLogo() {
@@ -37,7 +36,7 @@ public class AwayTeam {
     }
 
     public void setLogo(String logo) {
-        this.logo = logo;
+        this.logo=logo;
     }
 
 }

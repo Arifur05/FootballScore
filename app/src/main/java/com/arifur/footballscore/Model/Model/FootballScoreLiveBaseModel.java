@@ -1,10 +1,9 @@
-
-package com.arifur.footballscore.Model.StatModels;
+package com.arifur.footballscore.Model.Model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class LeagueStatisticsModel {
+public class FootballScoreLiveBaseModel {
 
     @SerializedName("api")
     @Expose
@@ -15,7 +14,7 @@ public class LeagueStatisticsModel {
     }
 
     public void setApi(Api api) {
-        this.api = api;
+        this.api=api;
     }
 
 }

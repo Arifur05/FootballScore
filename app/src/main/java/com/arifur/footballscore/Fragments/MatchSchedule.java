@@ -1,20 +1,19 @@
 package com.arifur.footballscore.Fragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.arifur.footballscore.Model.Fixtures.Api;
-import com.arifur.footballscore.Model.Fixtures.LeagueFixtureModel;
-import com.arifur.footballscore.R;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.arifur.footballscore.Api.ScoreApi;
+import com.arifur.footballscore.Model.Model.Api;
+import com.arifur.footballscore.Model.Model.FootballScoreLiveBaseModel;
+import com.arifur.footballscore.R;
 import com.arifur.footballscore.ViewModels.LiveFixtureAdapter;
 import com.arifur.footballscore.ViewModels.NextFixtureAdapter;
 
@@ -39,12 +38,13 @@ public class MatchSchedule extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_match_schedule, container, false);
-        recyclerView = view.findViewById(R.id.fixtureRecycler);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        View view=inflater.inflate(R.layout.fragment_match_schedule, container, false);
+        recyclerView=view.findViewById(R.id.fixtureRecycler);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         livematch=view.findViewById(R.id.livematches);
-        livematch.setLayoutManager(new LinearLayoutManager(getContext()));
-       // getFixture();
+        livematch.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL, false));
+        getLiveFixture();
+
         getNextFixture();
 
         // Inflate the layout for this fragment
@@ -53,39 +53,47 @@ public class MatchSchedule extends Fragment {
 
 
     private void getNextFixture() {
-        Call<LeagueFixtureModel> scoreList = ScoreApi.getscoreService().getScoreList();
-        scoreList.enqueue(new Callback<LeagueFixtureModel>() {
+        Call<FootballScoreLiveBaseModel> scoreList=ScoreApi.getFixtureInPlay().getNextFixtures();
+        scoreList.enqueue(new Callback<FootballScoreLiveBaseModel>() {
             @Override
-            public void onResponse(Call<LeagueFixtureModel> call, Response<LeagueFixtureModel> response) {
-                LeagueFixtureModel footballscoreList = response.body();
-                //Api api=footballscoreList.getApi();
-                    adapter= new NextFixtureAdapter(getContext(), footballscoreList.getApi().getFixtures());
-                    recyclerView.setAdapter(adapter);
+            public void onResponse(Call<FootballScoreLiveBaseModel> call, Response<FootballScoreLiveBaseModel> response) {
+                FootballScoreLiveBaseModel footballscoreList=response.body();
+                Api api=null;
+                if (footballscoreList != null) {
+                    api=footballscoreList.getApi();
+                }
+                if (api != null) {
+                    adapter=new NextFixtureAdapter(getContext(), api.getFixtures());
+                }
+                recyclerView.setAdapter(adapter);
 
             }
 
             @Override
-            public void onFailure(Call<LeagueFixtureModel> call, Throwable t) {
+            public void onFailure(Call<FootballScoreLiveBaseModel> call, Throwable t) {
                 Toast.makeText(getContext(), "Please connect Data!", Toast.LENGTH_LONG).show();
             }
         });
     }
-    private void getFixture(){
-        Call<LeagueFixtureModel> fixtureList= ScoreApi.getFixtureInPlay().getLiveFixture();
-        fixtureList.enqueue(new Callback<LeagueFixtureModel>() {
-            @Override
-            public void onResponse(Call<LeagueFixtureModel> call, Response<LeagueFixtureModel> response) {
-                LeagueFixtureModel fixtureModelList=response.body();
-                Api api= fixtureModelList.getApi();
 
-               liveFixtureAdapter = new LiveFixtureAdapter(getContext(),api.getFixtures());
+    private void getLiveFixture() {
+        Call<FootballScoreLiveBaseModel> fixtureList=ScoreApi.getFixtureInPlay().getLiveFixture();
+        fixtureList.enqueue(new Callback<FootballScoreLiveBaseModel>() {
+            @Override
+            public void onResponse(Call<FootballScoreLiveBaseModel> call, Response<FootballScoreLiveBaseModel> response) {
+                FootballScoreLiveBaseModel fixtureModelList=response.body();
+                assert fixtureModelList != null;
+                Api api=fixtureModelList.getApi();
+
+                liveFixtureAdapter=new LiveFixtureAdapter(getContext(), api.getFixtures());
                 livematch.setAdapter(liveFixtureAdapter);
             }
 
             @Override
-            public void onFailure(Call<LeagueFixtureModel> call, Throwable t) {
+            public void onFailure(Call<FootballScoreLiveBaseModel> call, Throwable t) {
                 Toast.makeText(getContext(), "Please connect Data!", Toast.LENGTH_LONG).show();
             }
         });
     }
+
 }

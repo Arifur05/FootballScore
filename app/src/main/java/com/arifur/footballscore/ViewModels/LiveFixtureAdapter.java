@@ -1,5 +1,6 @@
 package com.arifur.footballscore.ViewModels;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,57 +12,64 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.arifur.footballscore.Model.Fixtures.Fixture;
+import com.arifur.footballscore.Api.ScoreApi;
+import com.arifur.footballscore.Model.Model.Api;
+import com.arifur.footballscore.Model.Model.Fixture;
+import com.arifur.footballscore.Model.Model.FootballScoreLiveBaseModel;
 import com.arifur.footballscore.R;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class LiveFixtureAdapter extends RecyclerView.Adapter<LiveFixtureAdapter.LiveFixtureViewHolder> {
     private Context context;
     private List<Fixture> fixtureLists;
 
+    String mfixture_id;
+
     public LiveFixtureAdapter(Context context, List<Fixture> fixtureLists) {
-        this.context = context;
-        this.fixtureLists = fixtureLists;
+        this.context=context;
+        this.fixtureLists=fixtureLists;
     }
 
     @NonNull
     @Override
     public LiveFixtureViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.match_in_fixture, parent, false);
+        LayoutInflater inflater=LayoutInflater.from(context);
+        View view=inflater.inflate(R.layout.match_in_fixture, parent, false);
 
         return new LiveFixtureViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull LiveFixtureViewHolder holder, int position) {
-        Fixture fixture = fixtureLists.get(position);
-        if (fixtureLists!=null) {
-          try {
-            holder.time.setText(fixture.getEventDate());
-            holder.homeScore.setText(fixture.getGoalsHomeTeam().toString());
-            holder.awayScore.setText(fixture.getGoalsAwayTeam().toString());
+
+        if (fixtureLists != null) {
+            mfixture_id=fixtureLists.get(position).getFixtureId().toString();
+            getEvents();
             try {
+                holder.time.setText(fixtureLists.get(position).getEventDate());
+                holder.homeScore.setText(fixtureLists.get(position).getGoalsHomeTeam().toString());
+                holder.awayScore.setText(fixtureLists.get(position).getGoalsAwayTeam().toString());
+
                 Glide.with(context)
-                        .load(fixture.getAwayTeam().getLogo())
+                        .load(fixtureLists.get(position).getAwayTeam().getLogo())
                         .centerCrop()
                         .into(holder.homeTeam);
                 Glide.with(context)
-                        .load(fixture.getHomeTeam().getLogo())
+                        .load(fixtureLists.get(position).getHomeTeam().getLogo())
                         .centerCrop()
                         .into(holder.awayTeam);
-            }
-            catch (Exception ex){
+            } catch (Exception ex) {
                 ex.printStackTrace();
             }
-          }
-          catch (Exception e){
-              e.printStackTrace();
-          }
-        }
-        else {
+
+        } else {
             holder.time.setText("time");
             holder.homeScore.setText("-");
             holder.awayScore.setText("-");
@@ -87,18 +95,35 @@ public class LiveFixtureAdapter extends RecyclerView.Adapter<LiveFixtureAdapter.
     public static class LiveFixtureViewHolder extends RecyclerView.ViewHolder {
 
         ImageView homeTeam, awayTeam;
-         TextView homeScore, awayScore,time,status;
+        TextView homeScore, awayScore, time, status;
         LinearLayout scorelayout;
+
         public LiveFixtureViewHolder(@NonNull View itemView) {
 
             super(itemView);
-            homeTeam = (ImageView) itemView.findViewById(R.id.home_Teams);
-            awayTeam = itemView.findViewById(R.id.away_Teams);
-            homeScore = itemView.findViewById(R.id.home_Scores);
+            homeTeam=(ImageView) itemView.findViewById(R.id.home_Teams);
+            awayTeam=itemView.findViewById(R.id.away_Teams);
+            homeScore=itemView.findViewById(R.id.home_Scores);
             time=itemView.findViewById(R.id.time);
-            awayScore = itemView.findViewById(R.id.away_Scores);
-            status=itemView.findViewById(R.id.status);
+            awayScore=itemView.findViewById(R.id.away_Scores);
+
             scorelayout=itemView.findViewById(R.id.scoreLayout);
         }
+    }
+    private void  getEvents(){
+        Call<FootballScoreLiveBaseModel> eventsList=ScoreApi.getFixtureInPlay().getEvents(mfixture_id);
+        eventsList.enqueue(new Callback<FootballScoreLiveBaseModel>() {
+            @Override
+            public void onResponse(Call<FootballScoreLiveBaseModel> call, Response<FootballScoreLiveBaseModel> response) {
+                FootballScoreLiveBaseModel footballScoreLiveBaseModel=response.body();
+                Api api= footballScoreLiveBaseModel.getApi();
+
+            }
+
+            @Override
+            public void onFailure(Call<FootballScoreLiveBaseModel> call, Throwable t) {
+
+            }
+        });
     }
 }

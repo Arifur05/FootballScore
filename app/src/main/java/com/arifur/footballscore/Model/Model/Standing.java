@@ -1,10 +1,9 @@
-
-package com.arifur.footballscore.Model.StatModels;
+package com.arifur.footballscore.Model.Model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class  Standing {
+public class Standing {
 
     @SerializedName("rank")
     @Expose
@@ -54,7 +53,7 @@ public class  Standing {
     }
 
     public void setRank(Integer rank) {
-        this.rank = rank;
+        this.rank=rank;
     }
 
     public Integer getTeamId() {
@@ -62,7 +61,7 @@ public class  Standing {
     }
 
     public void setTeamId(Integer teamId) {
-        this.teamId = teamId;
+        this.teamId=teamId;
     }
 
     public String getTeamName() {
@@ -70,7 +69,7 @@ public class  Standing {
     }
 
     public void setTeamName(String teamName) {
-        this.teamName = teamName;
+        this.teamName=teamName;
     }
 
     public String getLogo() {
@@ -78,7 +77,7 @@ public class  Standing {
     }
 
     public void setLogo(String logo) {
-        this.logo = logo;
+        this.logo=logo;
     }
 
     public String getGroup() {
@@ -86,7 +85,7 @@ public class  Standing {
     }
 
     public void setGroup(String group) {
-        this.group = group;
+        this.group=group;
     }
 
     public String getForme() {
@@ -94,7 +93,7 @@ public class  Standing {
     }
 
     public void setForme(String forme) {
-        this.forme = forme;
+        this.forme=forme;
     }
 
     public String getStatus() {
@@ -102,7 +101,7 @@ public class  Standing {
     }
 
     public void setStatus(String status) {
-        this.status = status;
+        this.status=status;
     }
 
     public String getDescription() {
@@ -110,7 +109,7 @@ public class  Standing {
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.description=description;
     }
 
     public All getAll() {
@@ -118,7 +117,7 @@ public class  Standing {
     }
 
     public void setAll(All all) {
-        this.all = all;
+        this.all=all;
     }
 
     public Home getHome() {
@@ -126,7 +125,7 @@ public class  Standing {
     }
 
     public void setHome(Home home) {
-        this.home = home;
+        this.home=home;
     }
 
     public Away getAway() {
@@ -134,7 +133,7 @@ public class  Standing {
     }
 
     public void setAway(Away away) {
-        this.away = away;
+        this.away=away;
     }
 
     public Integer getGoalsDiff() {
@@ -142,7 +141,7 @@ public class  Standing {
     }
 
     public void setGoalsDiff(Integer goalsDiff) {
-        this.goalsDiff = goalsDiff;
+        this.goalsDiff=goalsDiff;
     }
 
     public Integer getPoints() {
@@ -150,7 +149,7 @@ public class  Standing {
     }
 
     public void setPoints(Integer points) {
-        this.points = points;
+        this.points=points;
     }
 
     public String getLastUpdate() {
@@ -158,7 +157,7 @@ public class  Standing {
     }
 
     public void setLastUpdate(String lastUpdate) {
-        this.lastUpdate = lastUpdate;
+        this.lastUpdate=lastUpdate;
     }
 
 }

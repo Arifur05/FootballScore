@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_margin="2dp"
+	android:elevation="6dp"
+	android:theme="@style/Theme.MaterialComponents.DayNight"
+	app:cardCornerRadius="6dp">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/text"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:padding="2dp"
+			android:weightSum="6">
+
+			<TextView
+				android:id="@+id/position_of_scorer"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_gravity="center"
+				android:layout_weight="1"
+				android:padding="6dp"
+				android:text="pos"
+				android:textColor="@color/textOptional"
+				android:textSize="14sp" />
+
+			<TextView
+				android:id="@+id/scorer_name"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_gravity="center"
+				android:layout_weight="3"
+				android:padding="6dp"
+				android:text="Player"
+				android:textColor="@color/textOptional"
+				android:textSize="14sp"
+				android:textStyle="bold" />
+
+			<ImageView
+				android:id="@+id/scorers_tean_logo"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_margin="2dp"
+				android:layout_weight="1"
+				android:contentDescription="TODO"
+				android:gravity="center_vertical|center_horizontal"
+				android:padding="2dp" />
+
+			<TextView
+				android:id="@+id/scorers_total_score"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:padding="6dp"
+				android:text="Goals"
+				android:textColor="@color/textOptional"
+				android:textSize="14sp" />
+		</LinearLayout>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1.5dp"
+			android:layout_marginStart="4dp"
+			android:layout_marginEnd="4dp"
+			android:background="@color/textSecondery" />
+	</LinearLayout>
+</com.google.android.material.card.MaterialCardView>

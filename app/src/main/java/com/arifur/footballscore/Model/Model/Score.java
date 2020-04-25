@@ -1,5 +1,4 @@
-
-package com.arifur.footballscore.Model.Fixtures;
+package com.arifur.footballscore.Model.Model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -24,7 +23,7 @@ public class Score {
     }
 
     public void setHalftime(String halftime) {
-        this.halftime = halftime;
+        this.halftime=halftime;
     }
 
     public String getFulltime() {
@@ -32,7 +31,7 @@ public class Score {
     }
 
     public void setFulltime(String fulltime) {
-        this.fulltime = fulltime;
+        this.fulltime=fulltime;
     }
 
     public Object getExtratime() {
@@ -40,7 +39,7 @@ public class Score {
     }
 
     public void setExtratime(Object extratime) {
-        this.extratime = extratime;
+        this.extratime=extratime;
     }
 
     public Object getPenalty() {
@@ -48,7 +47,7 @@ public class Score {
     }
 
     public void setPenalty(Object penalty) {
-        this.penalty = penalty;
+        this.penalty=penalty;
     }
 
 }

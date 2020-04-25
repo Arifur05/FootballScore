@@ -1,5 +1,4 @@
-
-package com.arifur.footballscore.Model.Fixtures;
+package com.arifur.footballscore.Model.Model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -66,7 +65,7 @@ public class Fixture {
     }
 
     public void setFixtureId(Integer fixtureId) {
-        this.fixtureId = fixtureId;
+        this.fixtureId=fixtureId;
     }
 
     public Integer getLeagueId() {
@@ -74,7 +73,7 @@ public class Fixture {
     }
 
     public void setLeagueId(Integer leagueId) {
-        this.leagueId = leagueId;
+        this.leagueId=leagueId;
     }
 
     public League getLeague() {
@@ -82,7 +81,7 @@ public class Fixture {
     }
 
     public void setLeague(League league) {
-        this.league = league;
+        this.league=league;
     }
 
     public String getEventDate() {
@@ -90,7 +89,7 @@ public class Fixture {
     }
 
     public void setEventDate(String eventDate) {
-        this.eventDate = eventDate;
+        this.eventDate=eventDate;
     }
 
     public Integer getEventTimestamp() {
@@ -98,7 +97,7 @@ public class Fixture {
     }
 
     public void setEventTimestamp(Integer eventTimestamp) {
-        this.eventTimestamp = eventTimestamp;
+        this.eventTimestamp=eventTimestamp;
     }
 
     public Integer getFirstHalfStart() {
@@ -106,7 +105,7 @@ public class Fixture {
     }
 
     public void setFirstHalfStart(Integer firstHalfStart) {
-        this.firstHalfStart = firstHalfStart;
+        this.firstHalfStart=firstHalfStart;
     }
 
     public Integer getSecondHalfStart() {
@@ -114,7 +113,7 @@ public class Fixture {
     }
 
     public void setSecondHalfStart(Integer secondHalfStart) {
-        this.secondHalfStart = secondHalfStart;
+        this.secondHalfStart=secondHalfStart;
     }
 
     public String getRound() {
@@ -122,7 +121,7 @@ public class Fixture {
     }
 
     public void setRound(String round) {
-        this.round = round;
+        this.round=round;
     }
 
     public String getStatus() {
@@ -130,7 +129,7 @@ public class Fixture {
     }
 
     public void setStatus(String status) {
-        this.status = status;
+        this.status=status;
     }
 
     public String getStatusShort() {
@@ -138,7 +137,7 @@ public class Fixture {
     }
 
     public void setStatusShort(String statusShort) {
-        this.statusShort = statusShort;
+        this.statusShort=statusShort;
     }
 
     public Integer getElapsed() {
@@ -146,7 +145,7 @@ public class Fixture {
     }
 
     public void setElapsed(Integer elapsed) {
-        this.elapsed = elapsed;
+        this.elapsed=elapsed;
     }
 
     public String getVenue() {
@@ -154,7 +153,7 @@ public class Fixture {
     }
 
     public void setVenue(String venue) {
-        this.venue = venue;
+        this.venue=venue;
     }
 
     public Object getReferee() {
@@ -162,7 +161,7 @@ public class Fixture {
     }
 
     public void setReferee(Object referee) {
-        this.referee = referee;
+        this.referee=referee;
     }
 
     public HomeTeam getHomeTeam() {
@@ -170,7 +169,7 @@ public class Fixture {
     }
 
     public void setHomeTeam(HomeTeam homeTeam) {
-        this.homeTeam = homeTeam;
+        this.homeTeam=homeTeam;
     }
 
     public AwayTeam getAwayTeam() {
@@ -178,7 +177,7 @@ public class Fixture {
     }
 
     public void setAwayTeam(AwayTeam awayTeam) {
-        this.awayTeam = awayTeam;
+        this.awayTeam=awayTeam;
     }
 
     public Integer getGoalsHomeTeam() {
@@ -186,7 +185,7 @@ public class Fixture {
     }
 
     public void setGoalsHomeTeam(Integer goalsHomeTeam) {
-        this.goalsHomeTeam = goalsHomeTeam;
+        this.goalsHomeTeam=goalsHomeTeam;
     }
 
     public Integer getGoalsAwayTeam() {
@@ -194,7 +193,7 @@ public class Fixture {
     }
 
     public void setGoalsAwayTeam(Integer goalsAwayTeam) {
-        this.goalsAwayTeam = goalsAwayTeam;
+        this.goalsAwayTeam=goalsAwayTeam;
     }
 
     public Score getScore() {
@@ -202,7 +201,7 @@ public class Fixture {
     }
 
     public void setScore(Score score) {
-        this.score = score;
+        this.score=score;
     }
 
 }

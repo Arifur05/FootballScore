@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
 	android:orientation="vertical">
@@ -8,85 +7,95 @@
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:background="#ffff"
-		android:orientation="horizontal"
-		android:weightSum="7">
+		android:orientation="vertical">
 
-		<TextView
-			android:id="@+id/position"
-			android:layout_width="0dp"
+		<LinearLayout
+			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_weight=".5"
-			android:gravity="center"
-			android:padding="3dp"
-			android:text="Ps"
-			android:textColor="@color/textOptional"
-			android:textSize="15sp"
-			android:textStyle="bold" />
+			android:background="#ffff"
+			android:orientation="horizontal"
+			android:weightSum="7">
 
-		<TextView
-			android:id="@+id/team_name"
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_weight="2.5"
-			android:gravity="center"
-			android:padding="3dp"
-			android:text="Team"
-			android:textColor="@color/textOptional"
-			android:textSize="15sp"
-			android:textStyle="bold"
+			<TextView
+				android:id="@+id/position"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight=".5"
+				android:gravity="center"
+				android:padding="3dp"
+				android:text="Ps"
+				android:textColor="@color/textOptional"
+				android:textSize="13sp"
+				android:textStyle="bold" />
 
-			/>
+			<TextView
+				android:id="@+id/team_name"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="2.5"
+				android:gravity="left"
+				android:padding="3dp"
+				android:text="Team"
+				android:textColor="@color/textOptional"
+				android:textSize="13sp"
+				android:textStyle="bold"
 
-		<TextView
-			android:id="@+id/matches_played"
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:gravity="center"
-			android:padding="3dp"
-			android:text="MP"
-			android:textColor="@color/textOptional"
-			android:textSize="15sp"
-			android:textStyle="bold" />
+				/>
 
-		<TextView
-			android:id="@+id/goalDiff"
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:gravity="center"
-			android:padding="3dp"
-			android:text="GD"
-			android:textColor="@color/textOptional"
-			android:textSize="15sp"
-			android:textStyle="bold" />
+			<TextView
+				android:id="@+id/matches_played"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:padding="3dp"
+				android:text="MP"
+				android:textColor="@color/textOptional"
+				android:textSize="13sp"
+				android:textStyle="bold" />
+
+			<TextView
+				android:id="@+id/goalDiff"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:padding="3dp"
+				android:text="GD"
+				android:textColor="@color/textOptional"
+				android:textSize="13sp"
+				android:textStyle="bold" />
 
 
-		<TextView
-			android:id="@+id/points"
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:gravity="center"
-			android:padding="3dp"
-			android:text="Pts"
-			android:textColor="@color/textOptional"
-			android:textSize="15sp"
-			android:textStyle="bold" />
+			<TextView
+				android:id="@+id/points"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:padding="3dp"
+				android:text="Pts"
+				android:textColor="@color/textOptional"
+				android:textSize="13sp"
+				android:textStyle="bold" />
 
-		<TextView
-			android:id="@+id/form"
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:gravity="center"
-			android:padding="3dp"
-			android:text="Form"
-			android:textColor="@color/textOptional"
-			android:textSize="12sp"
-			android:textStyle="bold" />
+			<TextView
+				android:id="@+id/form"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:gravity="left"
+				android:padding="2dp"
+				android:text="Form"
+				android:textColor="@color/textOptional"
+				android:textSize="11sp"
+				android:textStyle="bold" />
+		</LinearLayout>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1.5dp"
+			android:background="@color/textSecondery" />
 	</LinearLayout>
-
 
 </LinearLayout>

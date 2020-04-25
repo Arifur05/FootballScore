@@ -1,5 +1,4 @@
-
-package com.arifur.footballscore.Model.Fixtures;
+package com.arifur.footballscore.Model.Model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -24,7 +23,7 @@ public class League {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name=name;
     }
 
     public String getCountry() {
@@ -32,7 +31,7 @@ public class League {
     }
 
     public void setCountry(String country) {
-        this.country = country;
+        this.country=country;
     }
 
     public String getLogo() {
@@ -40,7 +39,7 @@ public class League {
     }
 
     public void setLogo(String logo) {
-        this.logo = logo;
+        this.logo=logo;
     }
 
     public String getFlag() {
@@ -48,7 +47,7 @@ public class League {
     }
 
     public void setFlag(String flag) {
-        this.flag = flag;
+        this.flag=flag;
     }
 
 }

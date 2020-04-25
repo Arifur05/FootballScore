@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.arifur.footballscore.Model.Fixtures.Fixture;
+import com.arifur.footballscore.Model.Model.Fixture;
 import com.arifur.footballscore.R;
 import com.bumptech.glide.Glide;
 
@@ -19,30 +19,34 @@ import java.util.List;
 
 public class NextFixtureAdapter extends RecyclerView.Adapter<NextFixtureAdapter.ScoreViewHolder> {
     private Context context;
-    private List<Fixture> fixtureList=new ArrayList<>();
+    private List<Fixture> fixtureList;
 
 
     public NextFixtureAdapter(Context context, List<Fixture> fixtureList) {
-        this.context = context;
-        this.fixtureList = fixtureList;
+        this.context=context;
+        this.fixtureList=fixtureList;
     }
 
 
     @NonNull
     @Override
     public ScoreViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.score_card, parent, false);
+        LayoutInflater inflater=LayoutInflater.from(context);
+        View view=inflater.inflate(R.layout.score_card, parent, false);
         return new ScoreViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ScoreViewHolder holder, int position) {
 
-        Fixture fixture = fixtureList.get(position);
+        Fixture fixture=fixtureList.get(position);
         try {
+
+            String deletedString= fixture.getEventDate();
+            String date=deletedString.replace("T00:00:00+00:00","");
+            holder.date.setText(date);
             String url=fixture.getHomeTeam().getLogo();
-            String url1= fixture.getAwayTeam().getLogo();
+            String url1=fixture.getAwayTeam().getLogo();
             Glide.with(context).load(url).into(holder.hometeam);
             Glide.with(context).load(url1).into(holder.awayteam);
             holder.versus.setText("Versus");
@@ -61,15 +65,16 @@ public class NextFixtureAdapter extends RecyclerView.Adapter<NextFixtureAdapter.
     public static class ScoreViewHolder extends RecyclerView.ViewHolder {
 
 
-        private TextView versus;
+        private TextView versus, date;
         private ImageView hometeam, awayteam;
 
-        public  ScoreViewHolder(@NonNull View itemView) {
+        public ScoreViewHolder(@NonNull View itemView) {
 
             super(itemView);
-            versus = (TextView) itemView.findViewById(R.id.versus);
-            hometeam = itemView.findViewById(R.id.home_Team);
-            awayteam = itemView.findViewById(R.id.away_Team);
+            date= itemView.findViewById(R.id.date);
+            versus=(TextView) itemView.findViewById(R.id.versus);
+            hometeam=itemView.findViewById(R.id.home_Team);
+            awayteam=itemView.findViewById(R.id.away_Team);
         }
     }
 }

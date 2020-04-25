@@ -1,10 +1,9 @@
-
-package com.arifur.footballscore.Model.StatModels;
+package com.arifur.footballscore.Model.Model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Away {
+public class All {
 
     @SerializedName("matchsPlayed")
     @Expose
@@ -30,7 +29,7 @@ public class Away {
     }
 
     public void setMatchsPlayed(Integer matchsPlayed) {
-        this.matchsPlayed = matchsPlayed;
+        this.matchsPlayed=matchsPlayed;
     }
 
     public Integer getWin() {
@@ -38,7 +37,7 @@ public class Away {
     }
 
     public void setWin(Integer win) {
-        this.win = win;
+        this.win=win;
     }
 
     public Integer getDraw() {
@@ -46,7 +45,7 @@ public class Away {
     }
 
     public void setDraw(Integer draw) {
-        this.draw = draw;
+        this.draw=draw;
     }
 
     public Integer getLose() {
@@ -54,7 +53,7 @@ public class Away {
     }
 
     public void setLose(Integer lose) {
-        this.lose = lose;
+        this.lose=lose;
     }
 
     public Integer getGoalsFor() {
@@ -62,7 +61,7 @@ public class Away {
     }
 
     public void setGoalsFor(Integer goalsFor) {
-        this.goalsFor = goalsFor;
+        this.goalsFor=goalsFor;
     }
 
     public Integer getGoalsAgainst() {
@@ -70,7 +69,7 @@ public class Away {
     }
 
     public void setGoalsAgainst(Integer goalsAgainst) {
-        this.goalsAgainst = goalsAgainst;
+        this.goalsAgainst=goalsAgainst;
     }
 
 }

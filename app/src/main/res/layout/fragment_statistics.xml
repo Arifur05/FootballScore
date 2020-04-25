@@ -5,10 +5,14 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	tools:context=".Fragments.Statistics">
-
+<androidx.core.widget.NestedScrollView
+	android:id="@+id/scroll"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
 	<LinearLayout
+		android:id="@+id/childLayout"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
+		android:layout_height="wrap_content"
 		android:layout_margin="8dp"
 		android:orientation="vertical">
 
@@ -80,9 +84,10 @@
 					android:layout_weight="1"
 					android:padding="3dp"
 					android:text="MP"
+					android:gravity="center"
 					android:textColor="@color/text"
 					android:textSize="15sp"
-					android:textStyle="bold"/>
+					android:textStyle="bold" />
 
 				<TextView
 					android:id="@+id/goalDiff"
@@ -91,9 +96,10 @@
 					android:layout_weight="1"
 					android:padding="3dp"
 					android:text="GD"
+					android:gravity="center"
 					android:textColor="@color/text"
 					android:textSize="15sp"
-					android:textStyle="bold"/>
+					android:textStyle="bold" />
 
 
 				<TextView
@@ -103,9 +109,10 @@
 					android:layout_weight="1"
 					android:padding="3dp"
 					android:text="Pts"
+					android:gravity="center"
 					android:textColor="@color/text"
 					android:textSize="15sp"
-					android:textStyle="bold"/>
+					android:textStyle="bold" />
 
 				<TextView
 					android:id="@+id/form"
@@ -116,7 +123,7 @@
 					android:text="Form"
 					android:textColor="@color/text"
 					android:textSize="15sp"
-					android:textStyle="bold"/>
+					android:textStyle="bold" />
 			</LinearLayout>
 		</com.google.android.material.card.MaterialCardView>
 
@@ -128,5 +135,21 @@
 
 
 		</androidx.recyclerview.widget.RecyclerView>
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/top_scorer_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom"
+			android:layout_marginStart="16dp"
+			android:layout_marginBottom="20dp"
+			android:backgroundTint="@color/colorAccent"
+			android:text="Top  Scorer"
+			android:textColor="@color/text"
+
+			/>
 	</LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+
+
 </FrameLayout>

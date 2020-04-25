@@ -4,8 +4,8 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	tools:context=".LeagueName"
-	android:background="@color/colorPrimary">
+	android:background="@color/colorPrimary"
+	tools:context=".LeagueName">
 
 	<FrameLayout
 		android:id="@+id/container"
@@ -21,14 +21,13 @@
 
 	<com.google.android.material.bottomnavigation.BottomNavigationView
 		android:id="@+id/footballscoreNavView"
+		style="@style/Widget.MaterialComponents.BottomNavigationView"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		app:labelVisibilityMode="unlabeled"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:menu="@menu/bottom_nav_menu"
-		app:labelVisibilityMode="unlabeled"
-		style="@style/Widget.MaterialComponents.BottomNavigationView"
-		/>
+		app:menu="@menu/bottom_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
