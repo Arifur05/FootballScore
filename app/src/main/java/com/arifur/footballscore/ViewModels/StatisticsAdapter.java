@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.arifur.footballscore.Model.Model.Standing;
+import com.arifur.footballscore.Model.Standing;
 import com.arifur.footballscore.R;
 
 import java.util.ArrayList;

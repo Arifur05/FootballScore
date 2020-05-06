@@ -10,18 +10,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.arifur.footballscore.Api.Statistics_Api;
-import com.arifur.footballscore.Model.Model.Api;
-import com.arifur.footballscore.Model.Model.FootballScoreLiveBaseModel;
+import com.arifur.footballscore.Model.Api;
+import com.arifur.footballscore.Model.FootballScoreLiveBaseModel;
 import com.arifur.footballscore.R;
 import com.arifur.footballscore.ViewModels.StatisticsAdapter;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static android.widget.LinearLayout.HORIZONTAL;
 
 
 /**
@@ -47,6 +50,8 @@ public class Statistics extends Fragment {
         recyclerView=view.findViewById(R.id.standingList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         scorerButton=view.findViewById(R.id.top_scorer_button);
+        DividerItemDecoration itemDecor = new DividerItemDecoration(getContext(), HORIZONTAL);
+        recyclerView.addItemDecoration(itemDecor);
         getStatistics();
         scorerButton.setOnClickListener(new View.OnClickListener() {
             @Override

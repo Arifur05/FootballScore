@@ -10,8 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.arifur.footballscore.Model.Model.Teams;
-import com.arifur.footballscore.Model.Model.Topscorer;
+import com.arifur.footballscore.Model.Teams;
+import com.arifur.footballscore.Model.Topscorer;
 import com.arifur.footballscore.R;
 import com.squareup.picasso.Picasso;
 

@@ -12,10 +12,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.arifur.footballscore.Api.Statistics_Api;
-import com.arifur.footballscore.Model.Model.Api;
-import com.arifur.footballscore.Model.Model.FootballScoreLiveBaseModel;
-import com.arifur.footballscore.Model.Model.Teams;
-import com.arifur.footballscore.Model.Model.Topscorer;
+import com.arifur.footballscore.Model.Api;
+import com.arifur.footballscore.Model.FootballScoreLiveBaseModel;
+import com.arifur.footballscore.Model.Teams;
+import com.arifur.footballscore.Model.Topscorer;
 import com.arifur.footballscore.R;
 import com.arifur.footballscore.ViewModels.TopScorerAdapter;
 import com.bumptech.glide.Glide;

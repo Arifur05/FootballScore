@@ -13,9 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.arifur.footballscore.Api.ScoreApi;
-import com.arifur.footballscore.Model.Model.Api;
-import com.arifur.footballscore.Model.Model.Fixture;
-import com.arifur.footballscore.Model.Model.FootballScoreLiveBaseModel;
+import com.arifur.footballscore.Model.Api;
+import com.arifur.footballscore.Model.Fixture;
+import com.arifur.footballscore.Model.FootballScoreLiveBaseModel;
 import com.arifur.footballscore.R;
 import com.bumptech.glide.Glide;
 
@@ -84,6 +84,13 @@ public class LiveFixtureAdapter extends RecyclerView.Adapter<LiveFixtureAdapter.
             holder.status.setVisibility(View.VISIBLE);
             holder.status.setText("Currently no fixtures in play");
         }
+        holder.setIsRecyclable(true);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     @Override

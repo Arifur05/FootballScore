@@ -6,8 +6,8 @@
 	android:elevation="6dp"
 	android:padding="8dp"
 	app:cardBackgroundColor="@color/cardview_light_background"
-	app:cardCornerRadius="8dp"
-	app:strokeColor="@color/color2"
+	app:cardCornerRadius="4dp"
+	app:strokeColor="@color/cardview_light_background"
 	app:strokeWidth="1.5dp">
 
 

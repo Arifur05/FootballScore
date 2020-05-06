@@ -1,63 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
-	android:layout_width="300dp"
+	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	android:layout_margin="8dp"
+	android:layout_marginTop="3dp"
 	android:elevation="6dp"
-	android:padding="8dp"
+	android:padding="4dp"
 	app:cardBackgroundColor="@color/cardview_light_background"
-	app:cardCornerRadius="20dp"
-	app:strokeColor="@color/color2"
+	app:cardCornerRadius="6dp"
+	app:strokeColor="@color/text"
 	app:strokeWidth="1.5dp"
+	android:visibility="visible"
 	>
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:orientation="vertical"
 		>
-		<TextView
-			android:id="@+id/date"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="Date"
-			android:textSize="15sp"
-			android:layout_gravity="center"
-			android:textColor="@color/color2"
-			android:fontFamily="sans-serif-black"
-			android:textStyle="bold"/>
+
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_gravity="center"
 		android:layout_margin="4dp"
 		android:orientation="horizontal"
-		android:padding="4dp"
+		android:padding="2dp"
 		android:weightSum="8">
 
 		<ImageView
 			android:id="@+id/home_Team"
-			android:layout_width="0dp"
-			android:layout_height="60dp"
+			android:layout_width="wrap_content"
+			android:layout_height="50dp"
 			android:layout_gravity="center"
 			android:layout_weight="3"
 			android:padding="2dp"
 			android:src="@drawable/ic_verified_user_black_24dp" />
-
+<LinearLayout
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:weightSum="2"
+	android:gravity="center"
+	android:layout_gravity="center"
+	android:layout_weight="2">
+	<TextView
+		android:id="@+id/date"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Date"
+		android:textSize="18sp"
+		android:textColor="@color/color2"
+		android:fontFamily="sans-serif-black"
+		android:textStyle="bold"
+		android:layout_weight="1"/>
 		<TextView
 			android:id="@+id/versus"
-			android:layout_width="0dp"
+			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:layout_weight="2"
+
+			android:layout_weight="1"
 			android:gravity="center"
 			android:text="Versus"
 			android:textColor="@color/textOptional" />
-
+</LinearLayout>
 		<ImageView
 			android:id="@+id/away_Team"
-			android:layout_width="0dp"
-			android:layout_height="60dp"
+			android:layout_width="wrap_content"
+			android:layout_height="50dp"
 			android:layout_gravity="center"
 			android:layout_weight="3"
 			android:padding="2dp"

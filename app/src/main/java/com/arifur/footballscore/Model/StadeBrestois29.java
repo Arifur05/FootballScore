@@ -1,11 +1,11 @@
 
-package com.arifur.footballscore.Model.Model;
+package com.arifur.footballscore.Model;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ParisSaintGermain {
+public class StadeBrestois29 {
 
     @SerializedName("coach_id")
     @Expose
@@ -18,10 +18,10 @@ public class ParisSaintGermain {
     private String formation;
     @SerializedName("startXI")
     @Expose
-    private List<StartXI_> startXI = null;
+    private List<StartXI> startXI = null;
     @SerializedName("substitutes")
     @Expose
-    private List<Substitute_> substitutes = null;
+    private List<Substitute> substitutes = null;
 
     public Integer getCoachId() {
         return coachId;
@@ -47,19 +47,19 @@ public class ParisSaintGermain {
         this.formation = formation;
     }
 
-    public List<StartXI_> getStartXI() {
+    public List<StartXI> getStartXI() {
         return startXI;
     }
 
-    public void setStartXI(List<StartXI_> startXI) {
+    public void setStartXI(List<StartXI> startXI) {
         this.startXI = startXI;
     }
 
-    public List<Substitute_> getSubstitutes() {
+    public List<Substitute> getSubstitutes() {
         return substitutes;
     }
 
-    public void setSubstitutes(List<Substitute_> substitutes) {
+    public void setSubstitutes(List<Substitute> substitutes) {
         this.substitutes = substitutes;
     }
 

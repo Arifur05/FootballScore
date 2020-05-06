@@ -10,11 +10,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.arifur.footballscore.Model.Model.Fixture;
+import com.arifur.footballscore.Model.Fixture;
 import com.arifur.footballscore.R;
 import com.bumptech.glide.Glide;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class NextFixtureAdapter extends RecyclerView.Adapter<NextFixtureAdapter.ScoreViewHolder> {
@@ -43,8 +42,8 @@ public class NextFixtureAdapter extends RecyclerView.Adapter<NextFixtureAdapter.
         try {
 
             String deletedString= fixture.getEventDate();
-            String date=deletedString.replace("T00:00:00+00:00","");
-            holder.date.setText(date);
+            String[] date=deletedString.split("T",0);
+            holder.date.setText(date[0]);
             String url=fixture.getHomeTeam().getLogo();
             String url1=fixture.getAwayTeam().getLogo();
             Glide.with(context).load(url).into(holder.hometeam);

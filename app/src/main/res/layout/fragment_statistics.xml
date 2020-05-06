@@ -146,6 +146,7 @@
 			android:text="Top  Scorer"
 			android:textColor="@color/text"
 
+
 			/>
 	</LinearLayout>
 

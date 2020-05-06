@@ -1,6 +1,6 @@
 package com.arifur.footballscore.Api;
 
-import com.arifur.footballscore.Model.Model.FootballScoreLiveBaseModel;
+import com.arifur.footballscore.Model.FootballScoreLiveBaseModel;
 
 import java.io.IOException;
 
